@@ -52,11 +52,11 @@ ANALYSIS_MODEL=gpt-4-turbo
 ### Run Examples
 
 ```bash
-# Run simple coordinator example
-uv run python examples/simple_coordinator.py
+# Run api client example
+uv run python examples/api_client_example.py
 
-# Run full workflow example
-uv run python examples/full_workflow.py
+# Run simple full workflow example
+uv run python examples/simple_example.py
 
 # Start FastAPI server
 uv run python src/api/main.py
