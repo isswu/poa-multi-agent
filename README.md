@@ -145,7 +145,7 @@ uv run ruff check src/
 
 ## Documentation
 
-See [design documentation](../docs/README_MULTI_AGENT.md) for detailed architecture and design decisions.
+See [design documentation](./docs/README_MULTI_AGENT.md) for detailed architecture and design decisions.
 
 ## License
 
