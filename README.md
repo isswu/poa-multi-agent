@@ -37,7 +37,7 @@ SENSITIVE_CONTENT_API=http://localhost:8001/api/v1
 SENTIMENT_API=http://localhost:8002/api/v1
 
 # Database
-DATABASE_URL=postgresql+asyncpg://user:password@localhost:5432/media_crawler_pro
+DATABASE_URL=postgresql+asyncpg://user:password@localhost:5432/db_name
 
 # Redis
 REDIS_URL=redis://localhost:6379/0
