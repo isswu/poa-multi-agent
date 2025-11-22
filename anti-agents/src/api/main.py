@@ -10,7 +10,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
-from api.routers import analysis_router
+from api.routers import analysis_router, health_router
 
 # Create FastAPI app
 app = FastAPI(
@@ -30,7 +30,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(analysis_router, prefix="/api/v1")
+# Include routers
+app.include_router(health_router, prefix="/api/v1")  # /api/v1/health
+app.include_router(analysis_router, prefix="/api/v1")  # /api/v1/analysis/*
+
 
 
 @app.get("/")
@@ -42,12 +45,6 @@ async def root():
         "status": "running",
         "docs": "/docs",
     }
-
-
-@app.get("/health")
-async def health():
-    """Health check endpoint."""
-    return {"status": "healthy", "service": "poa-multi-agent", "version": "0.1.0"}
 
 
 @app.exception_handler(Exception)

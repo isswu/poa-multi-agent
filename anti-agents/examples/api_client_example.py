@@ -16,7 +16,7 @@ async def main():
     # Analysis request
     request_data = {
         "session_id": "session_1234567890",
-        "request": "确认无误，立即开始采集和分析过程",
+        "request": "分析抖音上关于'Google Antigravity'的舆情，最近7天，分析200条",
         "max_turns": 20,
     }
 

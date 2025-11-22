@@ -47,7 +47,7 @@ class Settings(BaseSettings):
     # Session Storage
     session_db_path: str = "./data/sessions.db"
     session_db_url: str = (
-        "postgresql+asyncpg://postgres:dev123456@localhost:5432/poa_multi_agent_dev"
+        "postgresql+asyncpg://postgres:devpass@localhost:5432/media_monitor_dev"
     )
 
     # Logging

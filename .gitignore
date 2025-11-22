@@ -1,35 +1,14 @@
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
+# ============================================================================
+# Root .gitignore for POA Multi-Agent System Monorepo
+# Backend and Frontend have their own .gitignore files
+# ============================================================================
 
-# Virtual Environment
+# Environment files
 .env
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
+.env.local
+.env.*.local
 
-# IDE
+# IDE and Editor
 .vscode/
 .idea/
 *.swp
@@ -37,24 +16,38 @@ venv.bak/
 *~
 .DS_Store
 
-# Testing
-.pytest_cache/
-.coverage
-htmlcov/
-*.cover
-
-# Logs
+# Logs (root level)
 *.log
 logs/
 
-# Data
-data/
-*.db
-*.sqlite
-*.sqlite3
+# OS Files
+Thumbs.db
 
-# Temporary
+# Temporary files
 *.tmp
 .temp/
 temp/
+
+# Coverage reports (root level)
+coverage/
+.coverage
+htmlcov/
+
+# Build artifacts (should be in subdirs but just in case)
+dist/
+build/
+
+# Docker
+docker-compose.override.yml
+
+# Documentation builds
+site/
+
+# Python cache (root level scripts)
+__pycache__/
+*.pyc
+
+# AI/LLM artifacts
+.gemini/
+.cursor/
 

@@ -1,0 +1,154 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-50: #f5f3ff;
+  --color-primary-100: #ede9fe;
+  --color-primary-200: #ddd6fe;
+  --color-primary-300: #c4b5fd;
+  --color-primary-400: #a78bfa;
+  --color-primary-500: #8b5cf6;
+  --color-primary-600: #7c3aed;
+  --color-primary-700: #6d28d9;
+  --color-primary-800: #5b21b6;
+  --color-primary-900: #4c1d95;
+
+  --color-accent-50: #ecfdf5;
+  --color-accent-100: #d1fae5;
+  --color-accent-200: #a7f3d0;
+  --color-accent-300: #6ee7b7;
+  --color-accent-400: #34d399;
+  --color-accent-500: #10b981;
+  --color-accent-600: #059669;
+  --color-accent-700: #047857;
+  --color-accent-800: #065f46;
+  --color-accent-900: #064e3b;
+}
+
+/* Custom animations */
+@keyframes gradient {
+
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Base styles */
+body {
+  @apply bg-gradient-to-br from-violet-50 via-purple-50 to-pink-50 min-h-screen;
+}
+
+/* Glass effect utilities */
+.glass-card {
+  @apply bg-white/70 backdrop-blur-xl rounded-2xl shadow-xl border border-white/20;
+}
+
+.glass-card-dark {
+  @apply bg-gray-900/40 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/10;
+}
+
+/* Gradient text */
+.gradient-text {
+  @apply bg-gradient-to-r from-violet-600 to-purple-600 bg-clip-text text-transparent;
+}
+
+/* Animated gradient background */
+.animated-gradient {
+  @apply bg-gradient-to-r from-violet-500 via-purple-500 to-pink-500;
+  background-size: 200% 200%;
+  animation: gradient 8s ease infinite;
+}
+
+/* Button styles */
+.btn-primary {
+  @apply px-6 py-3 rounded-xl font-semibold text-white bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5;
+}
+
+.btn-secondary {
+  @apply px-4 py-2 rounded-lg font-medium text-violet-600 bg-white/80 hover:bg-white border border-violet-200 hover:border-violet-300 transition-all duration-200 backdrop-blur-sm;
+}
+
+/* Badge styles */
+.badge-online {
+  @apply inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-100 text-emerald-700 text-sm font-medium border border-emerald-200;
+}
+
+.badge-offline {
+  @apply inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-red-100 text-red-700 text-sm font-medium border border-red-200;
+}
+
+.badge-checking {
+  @apply inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-100 text-blue-700 text-sm font-medium border border-blue-200 animate-pulse;
+}
+
+/* Chat bubble styles */
+.chat-bubble-user {
+  @apply max-w-[80%] ml-auto px-4 py-3 rounded-2xl rounded-tr-sm bg-gradient-to-r from-violet-600 to-purple-600 text-white shadow-lg;
+}
+
+.chat-bubble-assistant {
+  @apply max-w-[80%] mr-auto px-4 py-3 rounded-2xl rounded-tl-sm bg-white/90 backdrop-blur-sm text-gray-800 shadow-md border border-gray-100;
+}
+
+/* Animation classes */
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.4s ease-out;
+}
+
+.animate-pulse-slow {
+  animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-violet-300 rounded-full hover:bg-violet-400;
+}
+
+/* Ant Design overrides */
+.ant-input,
+.ant-input-affix-wrapper {
+  @apply rounded-xl border-violet-200 focus:border-violet-500;
+}
+
+.ant-btn-primary {
+  @apply bg-gradient-to-r from-violet-600 to-purple-600 border-none hover:from-violet-700 hover:to-purple-700;
+}

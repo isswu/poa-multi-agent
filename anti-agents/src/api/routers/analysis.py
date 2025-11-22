@@ -96,13 +96,3 @@ async def create_analysis(request: AnalysisRequest):
             request_id=request.session_id or "unknown", status="failed", error=str(e)
         )
 
-
-@router.get("/health")
-async def health_check():
-    """
-    Health check endpoint.
-
-    Returns:
-        Health status
-    """
-    return {"status": "healthy", "service": "poa-multi-agent", "version": "0.1.0"}
