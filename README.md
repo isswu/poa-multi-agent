@@ -18,6 +18,13 @@ POA (Public Opinion Analysis) Multi-Agent System is an intelligent analysis plat
 
 The system uses coordinated AI agents to collect data, analyze sentiment, detect trends, identify risks, and generate comprehensive reports.
 
+## 📸 Screenshot
+
+![POA Multi-Agent Chat Interface](docs/assets/images/poa_multi_agent_chat.jpeg)
+
+*Modern chat interface for natural language interaction with AI agents*
+
+
 ## 🏗️ Project Structure
 
 ```

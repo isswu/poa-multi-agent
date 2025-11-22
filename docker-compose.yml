@@ -31,12 +31,12 @@ services:
       timeout: 5s
       retries: 5
 
-  # Backend API
-  backend:
+  # Anti-Agents API
+  anti_agents:
     build:
-      context: ./backend
+      context: ./anti_agents
       dockerfile: Dockerfile
-    container_name: poa-backend
+    container_name: poa-anti-agents
     ports:
       - "8100:8100"
     environment:
@@ -50,23 +50,23 @@ services:
       redis:
         condition: service_healthy
     volumes:
-      - ./backend:/app
+      - ./anti_agents:/app
     command: uvicorn src.api.main:app --host 0.0.0.0 --port 8100 --reload
 
-  # Frontend
-  frontend:
+  # Web
+  web:
     build:
-      context: ./frontend
+      context: ./web
       dockerfile: Dockerfile
-    container_name: poa-frontend
+    container_name: poa-web
     ports:
       - "5173:5173"
     environment:
       - VITE_API_BASE_URL=http://localhost:8100/api/v1
     depends_on:
-      - backend
+      - anti_agents
     volumes:
-      - ./frontend:/app
+      - ./web:/app
       - /app/node_modules
     command: npm run dev -- --host 0.0.0.0
 
